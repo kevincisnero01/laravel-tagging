@@ -12,7 +12,13 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Models\Post;
 
 Route::get('/', function () {
-    return view('welcome');
+    
+    
+    $post = Post::find(1);
+    $post->tag(['php', 'laravel']);
+
+    dd($post->tags);
 });
